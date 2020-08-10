@@ -11,12 +11,18 @@ import com.prabhutech.prabhupay_sdk.fragment.FragElogin;
 public class EpaymentLoginActivity extends AppCompatActivity {
     public static Boolean isSuccess = false;
     static PrabhuSdk.PrabhuCallBack prabhuCallBack;
+    String merchantId, password, inVoiceNo, totalAmount, remarks;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_epayment_login);
-        getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, FragElogin.newInstance(), "FRAG_SDK").commit();
+        merchantId = getIntent().getStringExtra("merchantId");
+        password = getIntent().getStringExtra("password");
+        inVoiceNo = getIntent().getStringExtra("inVoiceNo");
+        totalAmount = getIntent().getStringExtra("totalAmount");
+        remarks = getIntent().getStringExtra("remarks");
+        getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, FragElogin.newInstance(merchantId, password, inVoiceNo, totalAmount, remarks), "FRAG_SDK").commit();
     }
 
     @Override

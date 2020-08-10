@@ -57,12 +57,18 @@ public class FragElogin extends Fragment {
     private ApiRepo repo;
     private LinearLayout passwordLinearLayout, ecommerceLinearLayout;
     private TextView userNameErrorView, passwordErrorView, pinErrorView, note;
+    private static String eMerchantId, ePassword, eInvoiceNo, eTotalAmount, eRemarks;
 
     public FragElogin() {
     }
 
-    public static FragElogin newInstance() {
+    public static FragElogin newInstance(String merchantId, String password, String inVoiceNo, String totalAmount, String remarks) {
         FragElogin fragment = new FragElogin();
+        eMerchantId = merchantId;
+        ePassword = password;
+        eInvoiceNo = inVoiceNo;
+        eTotalAmount = totalAmount;
+        eRemarks = remarks;
         return fragment;
     }
 
@@ -294,17 +300,17 @@ public class FragElogin extends Fragment {
         JsonObject req = new JsonObject();
         Random r = new Random();
         int randomNum = r.nextInt(9999);
-        req.addProperty("productName", "Cheese Cake");
-        req.addProperty("quantity", "2");
-        req.addProperty("rate", "449.7");
-        req.addProperty("total", "899.4");
-        jsonArray.add(req);
-        jsonObject.addProperty("totalAmount", "899.4");
-        jsonObject.addProperty("merchantId", "bajekosekuwa");
-        jsonObject.addProperty("password", "Admin@123");
-        jsonObject.addProperty("invoiceNo", randomNum);
-        jsonObject.add("productDetails", jsonArray);
-        jsonObject.addProperty("remarks", "test");
+//        req.addProperty("productName", "Cheese Cake");
+//        req.addProperty("quantity", "2");
+//        req.addProperty("rate", "449.7");
+//        req.addProperty("total", "899.4");
+//        jsonArray.add(req);
+        jsonObject.addProperty("totalAmount", eTotalAmount);
+        jsonObject.addProperty("merchantId", eMerchantId);
+        jsonObject.addProperty("password", ePassword);
+        jsonObject.addProperty("invoiceNo", eInvoiceNo);
+//        jsonObject.add("productDetails", jsonArray);
+        jsonObject.addProperty("remarks", eRemarks);
         jsonObject.addProperty("returnUrl", "https://client.prabhupay.com");
         return jsonObject;
     }

@@ -10,13 +10,22 @@ import com.prabhutech.prabhupay_sdk.activity.EpaymentLoginActivity;
  */
 public class PrabhuSdk {
     private Context context;
+    public static Boolean isTest;
+    private String merchantId, password, inVoiceNo, totalAmount, remarks;
     PrabhuCallBack callBack;
 
-    public PrabhuSdk(Context context, PrabhuCallBack callBack) {
+    public PrabhuSdk(Context context, Boolean isTest, String merchantId, String password, String inVoiceNo, String totalAmount, String remarks, PrabhuCallBack callBack) {
         this.context = context;
+        PrabhuSdk.isTest = isTest;
+        this.merchantId = merchantId;
+        this.password = password;
+        this.inVoiceNo = inVoiceNo;
+        this.totalAmount = totalAmount;
+        this.remarks = remarks;
         setCallBack(callBack);
         openActivity();
     }
+
 
     /**
      * redirects to login page
@@ -29,6 +38,12 @@ public class PrabhuSdk {
             }
         });
         Intent intent = new Intent(context, EpaymentLoginActivity.class);
+        intent.putExtra("merchantId", merchantId);
+        intent.putExtra("password", password);
+        intent.putExtra("inVoiceNo", inVoiceNo);
+        intent.putExtra("totalAmount", totalAmount);
+        intent.putExtra("remarks", remarks);
+
         context.startActivity(intent);
     }
 

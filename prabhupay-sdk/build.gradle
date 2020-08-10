@@ -18,6 +18,20 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField "boolean", "MOCKED", "false"
+            // dont change these value
+            buildConfigField "int", "SERVER", "0"
+            buildConfigField "boolean", "ENC", "true"
+            buildConfigField "String", "MSERVER", "\"\""
+        }
+        debug {
+            buildConfigField "boolean", "MOCKED", "false"
+            // 0 <- live, 1 <- test, 2 <- mock
+            buildConfigField "int", "SERVER", "1"
+            buildConfigField "boolean", "ENC", "true"
+            // if using emulator then leave it at 10.0.2.2:port else put on your server's ip
+//            buildConfigField "String", "MSERVER", "\"http://10.0.2.2:8000/\""
+            buildConfigField "String", "MSERVER", "\"http://192.168.8.40:8000/\""
         }
     }
     compileOptions {
