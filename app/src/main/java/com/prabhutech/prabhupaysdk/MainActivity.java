@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         payViaPrabhuPay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                PrabhuSdk prabhuSdk = new PrabhuSdk(MainActivity.this, true, "bajekosekuwa", "Admin@123", String.valueOf(randomNum), "100", "test purpose",  new PrabhuSdk.PrabhuCallBack() {
+                new PrabhuSdk(MainActivity.this, PrabhuSdk.ENV_TEST, "bajekosekuwa", "Admin@123", String.valueOf(randomNum), "100", "test purpose",  new PrabhuSdk.PrabhuCallBack() {
                     @Override
                     public void isCompleted(Boolean success) {
                         if(success){

@@ -9,6 +9,9 @@ import com.prabhutech.prabhupay_sdk.activity.EpaymentLoginActivity;
  * Created by Niken on 7/29/2020.
  */
 public class PrabhuSdk {
+    public static final Boolean ENV_TEST = true;
+    public static final Boolean ENV_LIVE = false;
+
     private Context context;
     public static Boolean isTest;
     private String merchantId, password, inVoiceNo, totalAmount, remarks;
