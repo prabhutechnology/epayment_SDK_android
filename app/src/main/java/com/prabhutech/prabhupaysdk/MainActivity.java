@@ -24,12 +24,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         payViaPrabhuPay = findViewById(R.id.btn_pay);
-        Random r = new Random();
-        int randomNum = r.nextInt(9999);
         payViaPrabhuPay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new PrabhuSdk(MainActivity.this, PrabhuSdk.ENV_TEST, "bajekosekuwa", "Admin@123", String.valueOf(randomNum), "100", "test purpose",  new PrabhuSdk.PrabhuCallBack() {
+                new PrabhuSdk(MainActivity.this, PrabhuSdk.ENV_TEST, "<MerchantId>", "<Password>", "<Invoice No.>" ,"<Total Amount>", "<Remarks>",  new PrabhuSdk.PrabhuCallBack() {
                     @Override
                     public void isCompleted(Boolean success) {
                         if(success){

@@ -296,20 +296,10 @@ public class FragElogin extends Fragment {
 
     private JsonObject getRequest() {
         JsonObject jsonObject = new JsonObject();
-        JsonArray jsonArray = new JsonArray();
-        JsonObject req = new JsonObject();
-        Random r = new Random();
-        int randomNum = r.nextInt(9999);
-//        req.addProperty("productName", "Cheese Cake");
-//        req.addProperty("quantity", "2");
-//        req.addProperty("rate", "449.7");
-//        req.addProperty("total", "899.4");
-//        jsonArray.add(req);
         jsonObject.addProperty("totalAmount", eTotalAmount);
         jsonObject.addProperty("merchantId", eMerchantId);
         jsonObject.addProperty("password", ePassword);
         jsonObject.addProperty("invoiceNo", eInvoiceNo);
-//        jsonObject.add("productDetails", jsonArray);
         jsonObject.addProperty("remarks", eRemarks);
         jsonObject.addProperty("returnUrl", "https://client.prabhupay.com");
         return jsonObject;

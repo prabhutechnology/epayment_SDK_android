@@ -9,7 +9,7 @@ import com.prabhutech.prabhupay_sdk.R;
 import com.prabhutech.prabhupay_sdk.fragment.FragElogin;
 
 public class EpaymentLoginActivity extends AppCompatActivity {
-    public static Boolean isSuccess = false;
+    public static Boolean isSuccess;
     static PrabhuSdk.PrabhuCallBack prabhuCallBack;
     String merchantId, password, inVoiceNo, totalAmount, remarks;
 
@@ -17,6 +17,7 @@ public class EpaymentLoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_epayment_login);
+        isSuccess = false;
         merchantId = getIntent().getStringExtra("merchantId");
         password = getIntent().getStringExtra("password");
         inVoiceNo = getIntent().getStringExtra("inVoiceNo");
