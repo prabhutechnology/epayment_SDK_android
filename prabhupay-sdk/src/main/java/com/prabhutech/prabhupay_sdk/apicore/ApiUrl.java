@@ -11,8 +11,7 @@ public class ApiUrl {
     public static final String baseUrl;
     static {
         if (!PrabhuSdk.isTest) {
-            // TODO: 8/9/20 Change this to sys.prabhupay.com 
-            baseUrl = "https://testsys.prabhupay.com/api/";
+            baseUrl = "https://sys.prabhupay.com/api/";
         } else {
             baseUrl = "https://stagesys.prabhupay.com/api/";
         }

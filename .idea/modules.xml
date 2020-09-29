@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/PrabhuPAY SDK-app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/PrabhuPAY SDK-app.iml" group="PrabhuPAY SDK/app" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/prabhupay-sdk/PrabhuPAY SDK-prabhupay-sdk.iml" filepath="$PROJECT_DIR$/.idea/modules/prabhupay-sdk/PrabhuPAY SDK-prabhupay-sdk.iml" group="PrabhuPAY SDK/prabhupay-sdk" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/PrabhuPAY_SDK.iml" filepath="$PROJECT_DIR$/.idea/modules/PrabhuPAY_SDK.iml" group="PrabhuPAY_SDK" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.iml" group="PrabhuPAY SDK/app" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/epayment_SDK_android-PrabhuPAY_SDK.iml" filepath="$PROJECT_DIR$/.idea/modules/epayment_SDK_android-PrabhuPAY_SDK.iml" group="PrabhuPAY_SDK" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/prabhupay-sdk/prabhupay-sdk.iml" filepath="$PROJECT_DIR$/.idea/modules/prabhupay-sdk/prabhupay-sdk.iml" group="PrabhuPAY SDK/prabhupay-sdk" />
     </modules>
   </component>
