@@ -13,7 +13,7 @@ public class ApiUrl {
         if (!PrabhuSdk.isTest) {
             baseUrl = "https://sys.prabhupay.com/api/";
         } else {
-            baseUrl = "https://stagesys.prabhupay.com/api/";
+            baseUrl = "https://testsys.prabhupay.com/api/";
         }
 
     }
