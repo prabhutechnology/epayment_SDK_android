@@ -9,17 +9,18 @@ import com.prabhutech.prabhupay_sdk.activity.EpaymentLoginActivity;
  * Created by Niken on 7/29/2020.
  */
 public class PrabhuSdk {
-    public static final Boolean ENV_TEST = true;
-    public static final Boolean ENV_LIVE = false;
+    public static final int ENV_LIVE = 0;
+    public static final int ENV_TEST = 1;
+    public static final int ENV_STAGE = 2;
 
     private Context context;
-    public static Boolean isTest;
+    public static int env;
     private String merchantId, password, inVoiceNo, totalAmount, remarks;
     PrabhuCallBack callBack;
 
-    public PrabhuSdk(Context context, Boolean isTest, String merchantId, String password, String inVoiceNo, String totalAmount, String remarks, PrabhuCallBack callBack) {
+    public PrabhuSdk(Context context, int env, String merchantId, String password, String inVoiceNo, String totalAmount, String remarks, PrabhuCallBack callBack) {
         this.context = context;
-        PrabhuSdk.isTest = isTest;
+        PrabhuSdk.env = env;
         this.merchantId = merchantId;
         this.password = password;
         this.inVoiceNo = inVoiceNo;

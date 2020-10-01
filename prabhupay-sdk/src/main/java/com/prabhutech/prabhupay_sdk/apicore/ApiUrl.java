@@ -8,12 +8,14 @@ import com.prabhutech.prabhupay_sdk.PrabhuSdk;
  * Created by Niken on 7/30/2020.
  */
 public class ApiUrl {
-    public static final String baseUrl;
+    public static String baseUrl = "";
     static {
-        if (!PrabhuSdk.isTest) {
+        if (PrabhuSdk.env == PrabhuSdk.ENV_LIVE) {
             baseUrl = "https://sys.prabhupay.com/api/";
-        } else {
+        } else if(PrabhuSdk.env == PrabhuSdk.ENV_TEST) {
             baseUrl = "https://testsys.prabhupay.com/api/";
+        } else if(PrabhuSdk.env == PrabhuSdk.ENV_STAGE) {
+            baseUrl = "https://stagesys.prabhupay.com/api/";
         }
 
     }
