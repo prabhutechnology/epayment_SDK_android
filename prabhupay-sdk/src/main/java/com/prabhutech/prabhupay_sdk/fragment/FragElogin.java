@@ -123,14 +123,17 @@ public class FragElogin extends Fragment {
             public void onNext(JsonObject value) {
                 btnLogin.setBusy(false, getResources().getString(R.string.confirm));
                 assert getFragmentManager() != null;
-                getFragmentManager().beginTransaction().replace(R.id.frame_layout, FragFinalResult.newInstance(true, getResources().getString(R.string.success), JsonUtils.safeString(value.get("message"), "")), "FRAG_SDK").commit();
+                getFragmentManager().beginTransaction().replace(R.id.frame_layout, FragFinalResult.newInstance(true, getResources().getString(R.string.success), JsonUtils.safeString(value.get("message"), ""), value), "FRAG_SDK").commit();
             }
 
             @Override
             public void onError(Throwable e) {
+                JsonObject obj = new JsonObject();
+                obj.addProperty("success", false);
+                obj.addProperty("message", e.getMessage());
                 btnLogin.setBusy(false, getResources().getString(R.string.confirm));
                 assert getFragmentManager() != null;
-                getFragmentManager().beginTransaction().add(R.id.frame_layout, FragFinalResult.newInstance(false, getResources().getString(R.string.failed), e.getMessage()), "FRAG_SDK").addToBackStack("FRAGELOGIN").commit();
+                getFragmentManager().beginTransaction().add(R.id.frame_layout, FragFinalResult.newInstance(false, getResources().getString(R.string.failed), e.getMessage(), obj), "FRAG_SDK").addToBackStack("FRAGELOGIN").commit();
             }
 
             @Override

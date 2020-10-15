@@ -3,7 +3,12 @@ package com.prabhutech.prabhupay_sdk;
 import android.content.Context;
 import android.content.Intent;
 
+import com.google.gson.JsonObject;
 import com.prabhutech.prabhupay_sdk.activity.EpaymentLoginActivity;
+
+import org.json.JSONObject;
+
+import java.util.HashMap;
 
 /**
  * Created by Niken on 7/29/2020.
@@ -37,8 +42,13 @@ public class PrabhuSdk {
     private void openActivity(){
         EpaymentLoginActivity.setPrabhuCallBack(new PrabhuCallBack() {
             @Override
-            public void isCompleted(Boolean success) {
-                callBack.isCompleted(success);
+            public void onSuccess(HashMap<String, String> response) {
+                callBack.onSuccess(response);
+            }
+
+            @Override
+            public void onError(HashMap<String, String> error) {
+                callBack.onError(error);
             }
         });
         Intent intent = new Intent(context, EpaymentLoginActivity.class);
@@ -56,6 +66,7 @@ public class PrabhuSdk {
     }
 
     public interface PrabhuCallBack{
-        public void isCompleted(Boolean success);
+        void onSuccess(HashMap<String, String> response);
+        void onError(HashMap<String, String> error);
     }
 }

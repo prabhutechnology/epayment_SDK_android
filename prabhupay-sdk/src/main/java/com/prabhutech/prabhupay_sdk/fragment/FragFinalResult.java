@@ -12,10 +12,13 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.bumptech.glide.Glide;
+import com.google.gson.JsonObject;
 import com.prabhutech.prabhupay_sdk.R;
 import com.prabhutech.prabhupay_sdk.activity.EpaymentLoginActivity;
 import com.prabhutech.prabhupay_sdk.customview.PPButton;
+import com.prabhutech.prabhupay_sdk.utils.JsonUtils;
 
+import java.util.HashMap;
 import java.util.Objects;
 
 /**
@@ -27,15 +30,17 @@ public class FragFinalResult extends Fragment {
     PPButton btnGoBack;
     private static Boolean isSuccess = true;
     private static String header, body;
+    private static JsonObject finalResponse;
 
-    public FragFinalResult(Boolean result, String title, String message) {
+    public FragFinalResult(Boolean result, String title, String message,JsonObject response) {
         isSuccess = result;
         header = title;
         body = message;
+        finalResponse = response;
     }
 
-    public static FragFinalResult newInstance(Boolean result, String title, String message) {
-        FragFinalResult fragment = new FragFinalResult(result, title, message);
+    public static FragFinalResult newInstance(Boolean result, String title, String message, JsonObject response) {
+        FragFinalResult fragment = new FragFinalResult(result, title, message, response);
         return fragment;
     }
 
@@ -51,9 +56,11 @@ public class FragFinalResult extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         initView(view);
         if(isSuccess){
+            getSuccessData();
             successResponseImage.setVisibility(View.VISIBLE);
             failedResponseImage.setVisibility(View.GONE);
         } else {
+            getFailureData();
             successResponseImage.setVisibility(View.GONE);
             failedResponseImage.setVisibility(View.VISIBLE);
         }
@@ -63,14 +70,32 @@ public class FragFinalResult extends Fragment {
             btnGoBack.setBusy(true, "");
             if(isSuccess){
                 Objects.requireNonNull(getActivity()).finish();
-                EpaymentLoginActivity.isSuccess = true;
+                getSuccessData();
             } else {
                 btnGoBack.setBusy(false, getResources().getString(R.string.go_back));
                 assert getFragmentManager() != null;
                 getFragmentManager().popBackStack();
-                EpaymentLoginActivity.isSuccess = false;
+                getFailureData();
             }
         });
+    }
+
+    private void getFailureData() {
+        EpaymentLoginActivity.isSuccess = false;
+        HashMap<String, String> response = new HashMap<>();
+        response.put("message", JsonUtils.safeString(finalResponse.get("message"), ""));
+        response.put("success", finalResponse.get("success").getAsString());
+        EpaymentLoginActivity.response = response;
+    }
+
+    private void getSuccessData() {
+        EpaymentLoginActivity.isSuccess = true;
+        HashMap<String, String> response = new HashMap<>();
+        response.put("success", finalResponse.get("success").getAsString());
+        response.put("status", JsonUtils.safeString(finalResponse.get("status"), ""));
+        response.put("message", JsonUtils.safeString(finalResponse.get("message"), ""));
+        response.put("transactionId", JsonUtils.safeString(finalResponse.get("data").getAsJsonObject().get("transactionId"), ""));
+        EpaymentLoginActivity.response = response;
     }
 
 
