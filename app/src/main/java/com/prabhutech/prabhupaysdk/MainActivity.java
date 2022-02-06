@@ -1,20 +1,15 @@
 package com.prabhutech.prabhupaysdk;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
-import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.prabhutech.prabhupay_sdk.PrabhuSdk;
 
-import org.json.JSONObject;
-
 import java.util.HashMap;
-import java.util.Random;
 
 
 /**
@@ -31,7 +26,14 @@ public class MainActivity extends AppCompatActivity {
         payViaPrabhuPay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new PrabhuSdk(MainActivity.this, PrabhuSdk.ENV_LIVE, "<MerchantId>", "<Password>", "<Invoice No.>", "<Total Amount>", "<Remarks>", new PrabhuSdk.PrabhuCallBack() {
+                new PrabhuSdk(
+                        MainActivity.this,
+                        PrabhuSdk.ENV_STAGE,
+                        "jenish",
+                        "Admin@123",
+                        "12345777100077B",
+                        "1",
+                        "Remarks for Testings", new PrabhuSdk.PrabhuCallBack() {
                     @Override
                     public void onSuccess(HashMap<String, String> response) {
                         Log.i("success", response.toString());
