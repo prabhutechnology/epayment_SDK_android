@@ -1,6 +1,7 @@
 package com.prabhutech.prabhupay_sdk.apicore;
 
 import android.content.Context;
+import android.util.Log;
 
 import com.google.gson.JsonObject;
 
@@ -19,8 +20,10 @@ public class ApiRepo {
                 @Override
                 public JsonObject apply(JsonObject res) throws Exception {
                     if (res.get("success").getAsBoolean()) {
+                        Log.e("check ", "apply: " + res );
                         return res;
                     } else {
+                        Log.e("initiateTransaction", "apply: " + res );
                         throw new Error(res.get("message").getAsString());
                     }
                 }
@@ -32,6 +35,7 @@ public class ApiRepo {
             @Override
             public JsonObject apply(JsonObject res) throws Exception {
                 if (res.get("success").getAsBoolean()) {
+                    Log.e("getTrxnDetail", "apply: " +res );
                     return res;
                 } else {
                     throw new Error(res.get("message").getAsString());

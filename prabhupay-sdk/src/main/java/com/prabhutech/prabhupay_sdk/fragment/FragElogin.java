@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -234,6 +235,8 @@ public class FragElogin extends Fragment {
         repo.initiateTransaction(getContext(), getRequest()).safeSubscribe(new DisposableObserver<JsonObject>() {
             @Override
             public void onNext(JsonObject value) {
+
+                Log.e("FragLogin2", "onError: " + value );
                 if(value.get("success").getAsBoolean()) {
                     processId = value.getAsJsonObject("data").get("processId").getAsString();
                     JsonObject req = new JsonObject();
@@ -241,6 +244,8 @@ public class FragElogin extends Fragment {
                     repo.getTrxnDetail(getContext(), req).safeSubscribe(new DisposableObserver<JsonObject>() {
                         @Override
                         public void onNext(JsonObject value) {
+
+                            Log.e("FragLogin22", "onError: " + value );
                             if(value.get("success").getAsBoolean()){
                                 notifyChangedDataSet(value.getAsJsonObject("data"));
                                 busyLayout.setVisibility(View.GONE);
@@ -250,6 +255,7 @@ public class FragElogin extends Fragment {
 
                         @Override
                         public void onError(Throwable e) {
+                            Log.e("FragLogin1", "onError: " + e );
                             QuickUI.showBasicAlertDialog(getActivity(), getResources().getString(R.string.sorry), e.getMessage(), false, new SimpleCallback() {
                                 @Override
                                 public void call() {
@@ -268,6 +274,7 @@ public class FragElogin extends Fragment {
 
             @Override
             public void onError(Throwable e) {
+                Log.e("Error Out", "onError: " +e.toString() );
                 QuickUI.showBasicAlertDialog(getActivity(), getResources().getString(R.string.sorry), e.getMessage(), false, new SimpleCallback() {
                     @Override
                     public void call() {
@@ -305,6 +312,7 @@ public class FragElogin extends Fragment {
         jsonObject.addProperty("invoiceNo", eInvoiceNo);
         jsonObject.addProperty("remarks", eRemarks);
         jsonObject.addProperty("returnUrl", "https://client.prabhupay.com");
+        Log.e("Frag", "getRequest: " + jsonObject );
         return jsonObject;
     }
 

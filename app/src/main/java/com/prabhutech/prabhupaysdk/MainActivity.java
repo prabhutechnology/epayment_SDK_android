@@ -1,3 +1,4 @@
+
 package com.prabhutech.prabhupaysdk;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -28,10 +29,27 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         payViaPrabhuPay = findViewById(R.id.btn_pay);
+//       "clowgz9n",
+        /*wahfr96s*/
+        //gyapu -> prabhutech = 4fnuk0xj
+        //MOMO -
+       // MOMO@123
+        /**
+         "CLIENT",
+         "CLIENT@123",
+         *
+         * */
         payViaPrabhuPay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new PrabhuSdk(MainActivity.this, PrabhuSdk.ENV_LIVE, "<MerchantId>", "<Password>", "<Invoice No.>", "<Total Amount>", "<Remarks>", new PrabhuSdk.PrabhuCallBack() {
+                new PrabhuSdk(MainActivity.this,
+                        PrabhuSdk.ENV_STAGE,
+                        "pickme001",
+                        "mgg5xf7c",
+                        "12345777100077",
+                        "01",
+                        "Remarks from prabhupay sdk",
+                        new PrabhuSdk.PrabhuCallBack() {
                     @Override
                     public void onSuccess(HashMap<String, String> response) {
                         Log.i("success", response.toString());
