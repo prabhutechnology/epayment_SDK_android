@@ -9,7 +9,7 @@
     <string name="password">Password</string>
     <string name="password_mpin">Password/ mPIN</string>
     <string name="ecommerce_mpin">eCommerce mPin</string>
-    <string name="all_rights_reserved">2020 \u00A9 Prabhu Technology Pvt. Ltd. All rights reserved.</string>
+    <string name="all_rights_reserved">\u00A9 Prabhu Technology Pvt. Ltd. All rights reserved.</string>
     <string name="cancel">Cancel</string>
     <string name="button">Button</string>
     <string name="go_back">Go Back</string>
@@ -21,4 +21,5 @@
     <string name="sorry">Sorry</string>
     <string name="success">Success</string>
     <string name="failed">Failed</string>
+    <string name="reference_code">Reference Code</string>
 </resources>

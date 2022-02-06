@@ -48,14 +48,14 @@ public class FragElogin extends Fragment {
     private RecyclerView recyclerView;
     private ArrayList<TransactionPairData> transactionDetailList;
     private TransactionDetailAdapter adapter;
-    private TextInputLayout userNameLayout, passwordLayout, pinLayout;
-    private EditText userNameEditText, passwordEditText, eCommercePinEditText;
+    private TextInputLayout userNameLayout, passwordLayout, pinLayout , promoLayout;
+    private EditText userNameEditText, passwordEditText, eCommercePinEditText, promoEditText;
     private PPButton btnLogin, btnCancel;
     private RelativeLayout busyLayout;
     private ScrollView detailLayout;
     private String processId, customerId;
     private ApiRepo repo;
-    private LinearLayout passwordLinearLayout, ecommerceLinearLayout;
+    private LinearLayout passwordLinearLayout, ecommerceLinearLayout , promoLinearLayout;
     private TextView userNameErrorView, passwordErrorView, pinErrorView, note;
     private static String eMerchantId, ePassword, eInvoiceNo, eTotalAmount, eRemarks;
 
@@ -150,6 +150,7 @@ public class FragElogin extends Fragment {
         confirmReq.addProperty("trxnStatus", getResources().getString(R.string.confirm));
         confirmReq.addProperty("username", userNameEditText.getText().toString());
         confirmReq.addProperty("trxnPin", eCommercePinEditText.getText().toString());
+        confirmReq.addProperty("refCode", promoEditText.getText().toString());
         return confirmReq;
     }
 
@@ -192,6 +193,7 @@ public class FragElogin extends Fragment {
                 userNameEditText.setEnabled(false);
                 passwordLinearLayout.setVisibility(View.GONE);
                 ecommerceLinearLayout.setVisibility(View.VISIBLE);
+                promoLinearLayout.setVisibility(View.VISIBLE);
             }
 
             @Override
@@ -326,7 +328,9 @@ public class FragElogin extends Fragment {
         passwordEditText = view.findViewById(R.id.et_password);
         passwordLinearLayout = view.findViewById(R.id.password_linear_layout);
         ecommerceLinearLayout = view.findViewById(R.id.ecommerce_layout);
+        promoLinearLayout = view.findViewById(R.id.promoCode_layout);
         eCommercePinEditText = view.findViewById(R.id.et_ecommerce_pin);
+        promoEditText = view.findViewById(R.id.et_promo_code);
         userNameErrorView = view.findViewById(R.id.tv_username_error_msg);
         passwordErrorView = view.findViewById(R.id.tv_password_error_msg);
         pinErrorView = view.findViewById(R.id.tv_pin_error_msg);
