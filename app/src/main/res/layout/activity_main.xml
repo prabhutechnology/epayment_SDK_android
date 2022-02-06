@@ -6,6 +6,58 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layoutUserName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/please_enter_mobile_number_or_email"
+        android:paddingHorizontal="10dp"
+        android:layout_marginHorizontal="@dimen/general_padding_16"
+        android:layout_marginTop="@dimen/general_padding_16"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_username"
+            android:inputType="textMultiLine"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layoutPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/please_enter_password"
+        android:paddingHorizontal="10dp"
+        app:passwordToggleEnabled="true"
+        android:layout_marginHorizontal="@dimen/general_padding_16"
+        android:layout_marginTop="@dimen/general_padding_16"
+        app:layout_constraintTop_toBottomOf="@id/layoutUserName">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:id="@+id/et_password"
+            android:inputType="textPassword"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layout_voucherNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Voucher Number"
+        android:paddingHorizontal="10dp"
+        android:layout_marginHorizontal="@dimen/general_padding_16"
+        android:layout_marginTop="@dimen/general_padding_16"
+        app:layout_constraintTop_toBottomOf="@id/layoutPassword">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_voucher"
+            android:inputType="textMultiLine"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
+
     <Button
         android:id="@+id/btn_pay"
         android:layout_width="match_parent"

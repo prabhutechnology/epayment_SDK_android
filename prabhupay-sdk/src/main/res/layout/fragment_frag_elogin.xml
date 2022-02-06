@@ -171,9 +171,11 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/general_padding_8"
-                            android:orientation="horizontal">
+                            android:orientation="vertical">
 
                             <LinearLayout
+                                android:layout_marginVertical="5dp"
+                                android:visibility="visible"
                                 android:id="@+id/password_linear_layout"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -227,6 +229,7 @@
                             </LinearLayout>
 
                             <LinearLayout
+                                android:layout_marginVertical="5dp"
                                 android:id="@+id/ecommerce_layout"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -280,6 +283,60 @@
                                     android:visibility="gone" />
 
                             </LinearLayout>
+                            <!-- Promo Code -->
+                            <LinearLayout
+                                android:layout_marginVertical="5dp"
+                                android:id="@+id/promoCode_layout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:visibility="gone">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="@dimen/general_padding_24"
+                                    android:layout_marginTop="@dimen/general_padding_2"
+                                    android:layout_marginRight="@dimen/general_padding_24"
+                                    android:text="@string/reference_code"
+                                    android:textColor="@color/colorBlack"
+                                    android:textFontWeight="500"
+                                    android:textSize="12sp" />
+
+                                <com.google.android.material.textfield.TextInputLayout
+                                    android:id="@+id/tl_promo_code"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="@dimen/general_padding_24"
+                                    android:layout_marginTop="@dimen/general_padding_8"
+                                    android:layout_marginRight="@dimen/general_padding_24"
+                                    app:errorEnabled="false"
+                                    app:hintEnabled="false">
+
+                                    <EditText
+                                        android:id="@+id/et_promo_code"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="40dp"
+                                        android:background="@drawable/bg_edittext"
+                                        android:hint="@string/reference_code"
+                                        android:inputType="text"
+                                        android:textColorHint="@color/darkSeparator"
+                                        android:textSize="14sp" />
+
+                                </com.google.android.material.textfield.TextInputLayout>
+                                <TextView
+                                    android:id="@+id/tv_pin_error_msg"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="@dimen/general_padding_24"
+                                    android:layout_marginTop="@dimen/general_padding_8"
+                                    android:layout_marginRight="@dimen/general_padding_24"
+                                    android:textColor="@color/pp_primary"
+                                    android:textSize="12sp"
+                                    android:visibility="gone" />
+
+                            </LinearLayout>
+
                         </LinearLayout>
 
                         <LinearLayout
