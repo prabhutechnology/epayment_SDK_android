@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android/PrabhuTech/SDK_PRABUPAY/epayment_SDK_android/app/src/main/res/layout/activity_main.xml" value="0.14270833333333333" />
+        <entry key="..\:/Android/PrabhuTech/SDK_PRABUPAY/epayment_SDK_android/prabhupay-sdk/src/main/res/layout/activity_epayment_login.xml" value="0.14270833333333333" />
         <entry key="..\:/Android/PrabhuTech/SDK_PRABUPAY/epayment_SDK_android/prabhupay-sdk/src/main/res/layout/fragment_frag_elogin.xml" value="0.1" />
       </map>
     </option>

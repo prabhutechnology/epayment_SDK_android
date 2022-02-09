@@ -148,7 +148,7 @@
                             <EditText
                                 android:id="@+id/et_username"
                                 android:layout_width="match_parent"
-                                android:layout_height="40dp"
+                                android:layout_height="50dp"
                                 android:background="@drawable/bg_edittext"
                                 android:hint="@string/email_or_mobile_number"
                                 android:textColorHint="@color/darkSeparator"
@@ -206,7 +206,7 @@
                                     <EditText
                                         android:id="@+id/et_password"
                                         android:layout_width="match_parent"
-                                        android:layout_height="40dp"
+                                        android:layout_height="50dp"
                                         android:background="@drawable/bg_edittext"
                                         android:hint="@string/password_mpin"
                                         android:inputType="textPassword"
@@ -260,7 +260,7 @@
                                     <EditText
                                         android:id="@+id/et_ecommerce_pin"
                                         android:layout_width="match_parent"
-                                        android:layout_height="40dp"
+                                        android:layout_height="50dp"
                                         android:background="@drawable/bg_edittext"
                                         android:hint="@string/ecommerce_mpin"
                                         android:inputType="numberPassword"
@@ -316,7 +316,7 @@
                                     <EditText
                                         android:id="@+id/et_promo_code"
                                         android:layout_width="match_parent"
-                                        android:layout_height="40dp"
+                                        android:layout_height="50dp"
                                         android:background="@drawable/bg_edittext"
                                         android:hint="@string/reference_code"
                                         android:inputType="text"
