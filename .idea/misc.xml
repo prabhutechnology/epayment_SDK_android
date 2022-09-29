@@ -6,10 +6,14 @@
         <entry key="..\:/Android/PrabhuTech/SDK_PRABUPAY/epayment_SDK_android/app/src/main/res/layout/activity_main.xml" value="0.14270833333333333" />
         <entry key="..\:/Android/PrabhuTech/SDK_PRABUPAY/epayment_SDK_android/prabhupay-sdk/src/main/res/layout/activity_epayment_login.xml" value="0.14270833333333333" />
         <entry key="..\:/Android/PrabhuTech/SDK_PRABUPAY/epayment_SDK_android/prabhupay-sdk/src/main/res/layout/fragment_frag_elogin.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.3591485507246377" />
+        <entry key="prabhupay-sdk/src/main/res/layout/activity_epayment_login.xml" value="0.3591485507246377" />
+        <entry key="prabhupay-sdk/src/main/res/layout/fragment_final_result.xml" value="0.3591485507246377" />
+        <entry key="prabhupay-sdk/src/main/res/layout/fragment_frag_elogin.xml" value="0.3591485507246377" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
